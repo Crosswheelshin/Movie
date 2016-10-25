@@ -80,7 +80,7 @@
 					<td>${n.code}</td>
 					<td><a href="notice-detail?code=${n.code}">${n.title}</a></td>
 					<td>${n.writer}</td>
-					<td><<fmt:formatDate pattern="yyyy-MM-dd" value="${n.regdate}" />
+					<td><fmt:formatDate pattern="yyyy-MM-dd" value="${n.regDate}" />
 					</td>
 					<td>${n.hit}</td>
 				</tr>

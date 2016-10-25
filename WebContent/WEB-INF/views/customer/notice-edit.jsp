@@ -39,7 +39,7 @@
 						</tr>
 						<tr>
 							<td>작성일</td>
-							<td colspan="3">${n.regdate}</td>
+							<td colspan="3">${n.regDate}</td>
 
 						</tr>
 						<tr>
