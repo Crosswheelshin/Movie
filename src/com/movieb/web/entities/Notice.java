@@ -7,6 +7,7 @@ public class Notice {
 	private String title;
 	private String writer;
 	private String content;
+	private String movie_title;
 	private Date regDate;
 	private int hit;
 	
@@ -45,5 +46,11 @@ public class Notice {
 	}
 	public void setHit(int hit) {
 		this.hit = hit;
+	}
+	public String getMovie_title() {
+		return movie_title;
+	}
+	public void setMovie_title(String movie_title) {
+		this.movie_title = movie_title;
 	}
 }

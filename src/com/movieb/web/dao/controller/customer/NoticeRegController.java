@@ -25,6 +25,7 @@ public class NoticeRegController extends HttpServlet {
 		
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
+		String regdate = request.getParameter("regdate");
 		
 		NoticeDao noticeDao = new MyBatisNoticeDao();
 		

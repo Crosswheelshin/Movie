@@ -5,13 +5,17 @@ INSERT INTO REVIEW_NOTICE(
 	TITLE,
 	CONTENT,
 	WRITER,
-	REGDATE)
+	REGDATE,
+	MOVIE_TITLE,
+	HIT)
 VALUES(
-	'1',
+	'4',
 	'초록물고기후기(스포주의)',
 	'재미없음보지마센',
 	'kttank3',
-	'2016-10-25'
+	'2016-10-26',
+	'초록물고기',
+	'2'
 	)
 	
 	SELECT * FROM REVIEW_NOTICE;
