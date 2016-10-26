@@ -26,6 +26,7 @@ public class ReviewRegController extends HttpServlet {
 		//request.setCharacterEncoding("UTF-8");
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
+		String movie_title = request.getParameter("movie_title");
 
 		
 		NoticeDao noticeDao = new MyBatisNoticeDao();
@@ -33,8 +34,9 @@ public class ReviewRegController extends HttpServlet {
 		Notice n = new Notice();		
 		n.setTitle(title);
 		n.setContent(content);
+		n.setMovie_title(movie_title);
 		// 현재 로그인 사용자 정보를 얻는 로직
-		n.setWriter("newlec");
+		n.setWriter("kttank3");
 		
 		noticeDao.insert(n);
 		

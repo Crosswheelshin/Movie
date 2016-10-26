@@ -49,7 +49,14 @@
 			</tr>
 			<tr>
 				<td>작성일</td>
-				<td colspan="3">${n.regDate}</td>
+				<td colspan="3">
+				${n.regDate}"
+				</td>
+
+			</tr>
+				<tr>
+				<td>영화제목</td>
+				<td colspan="3">${n.movie_title}</td>
 
 			</tr>
 			<tr>
@@ -58,11 +65,7 @@
 				<td>조회수</td>
 				<td>${n.hit}</td>
 			</tr>
-			<tr>
-				<td>첨부파일</td>
-				<td colspan="3"></td>
-
-			</tr>
+		
 			<tr>
 				<td colspan="4">${n.content}</td>
 

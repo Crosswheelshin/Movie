@@ -70,6 +70,7 @@
 				<td>번호</td>
 				<td>제목</td>
 				<td>작성자</td>
+				<td>영화명</td>
 				<td>작성일</td>
 				<td>조회수</td>
 			</tr>
@@ -81,7 +82,8 @@
 					<td>${n.code}</td>
 					<td><a href="review-detail?code=${n.code}">${n.title}</a></td>
 					<td>${n.writer}</td>
-					<td><<fmt:formatDate pattern="yyyy-MM-dd" value="${n.regDate}" />
+					<td>${n.movie_title}</td>
+					<td><fmt:formatDate pattern="yyyy-MM-dd" value="${n.regDate}" />
 					</td>
 					<td>${n.hit}</td>
 				</tr>

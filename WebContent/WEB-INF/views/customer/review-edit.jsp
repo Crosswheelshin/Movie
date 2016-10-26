@@ -28,7 +28,7 @@
 	<ul>
 		<li><a href="../index.jsp">home</a>
 		<li>
-		<li><a href="review">공지사항</a>
+		<li><a href="review">리뷰</a>
 		<li>
 	</ul>
 	<form action="review-edit" method="post">
@@ -46,16 +46,17 @@
 
 						</tr>
 						<tr>
+							<td>영화제목</td>
+							<td colspan="3"><input type="text" name="movie_title" value="${n.movie_title}" /></td>
+
+						</tr>
+						<tr>
 							<td>작성자</td>
 							<td>${n.writer}</td>
 							<td>조회수</td>
 							<td>${n.hit}</td>
 						</tr>
-						<tr>
-							<td>첨부파일</td>
-							<td colspan="3"></td>
-
-						</tr>
+						
 						<tr>
 							<td colspan="4"><textarea name="content" rows="20" cols="60">${n.content}</textarea>
 							</td>

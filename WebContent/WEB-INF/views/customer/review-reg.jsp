@@ -28,7 +28,7 @@
 	<ul>
 		<li><a href="../index.jsp">home</a>
 		<li>
-		<li><a href="review">공지사항</a>
+		<li><a href="review">리뷰</a>
 		<li>
 	</ul>
 	<form action="review-reg" method="post">
@@ -40,6 +40,10 @@
 							<td>제목</td>
 							<td><input type="text" name="title" value="${n.title}" /></td>
 						</tr>
+						<tr>
+							<td>영화제목</td>
+							<td><input type="text" name="movie_title" value="${n.movie_title}" /></td>
+						</tr>
 
 						<tr>
 							<td colspan="2"><textarea name="content" rows="20" cols="60">${n.content}</textarea>
@@ -49,7 +53,7 @@
 				</table>
 				<div>
 					<input type ="submit" value="등록"/>
-					<a href="notice">취소</a>
+					<a href="review">취소</a>
 				</div>
 			</legend>
 		</fieldset>

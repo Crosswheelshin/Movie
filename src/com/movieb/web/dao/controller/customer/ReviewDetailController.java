@@ -37,6 +37,7 @@ public class ReviewDetailController extends HttpServlet {
 		request.getRequestDispatcher("/WEB-INF/views/customer/review-detail.jsp").forward(request, response);//
 
 	}
+	
 
 
 }

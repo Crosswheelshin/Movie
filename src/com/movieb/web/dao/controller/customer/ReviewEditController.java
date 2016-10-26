@@ -22,11 +22,12 @@ public class ReviewEditController extends HttpServlet {
 		  String code = request.getParameter("code");
 		  String content= request.getParameter("content");
 		  String title= request.getParameter("title");
+		  String movie_title= request.getParameter("movie_title");
 		  
 		  NoticeDao noticeDao = new MyBatisNoticeDao();
 		  Notice n = new Notice();
 		  
-		
+		n.setMovie_title(movie_title);
 		  n.setTitle(title);
 		  n.setCode(code);
 		  n.setContent(content);	 

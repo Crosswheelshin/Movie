@@ -19,7 +19,7 @@
 	</select>
 	<update id="update" parameterType="com.movieb.web.entities.Notice">
 		<!-- 업데이트야요 -->
-		UPDATE REVIEW_NOTICE SET TITLE=#{title}, CONTENT=#{content} 
+		UPDATE REVIEW_NOTICE SET TITLE=#{title}, CONTENT=#{content} , MOVIE_TITLE=#{movie_title} 
 		WHERE CODE=#{code}
 	</update>
 	<delete id="delete">
@@ -29,8 +29,8 @@
 		<selectKey order="BEFORE" keyProperty="code" resultType="String">
 			SELECT ISNULL(MAX(CAST(CODE AS INT)), 0)+1 AS CODE FROM REVIEW_NOTICE
 		</selectKey>
-		INSERT INTO REVIEW_NOTICE(CODE, TITLE, WRITER, CONTENT)
-		VALUES(#{code}, #{title}, #{writer}, #{content})
+		INSERT INTO REVIEW_NOTICE(CODE, TITLE, MOVIE_TITLE, WRITER, CONTENT)
+		VALUES(#{code}, #{title}, #{movie_title}, #{writer}, #{content})
 	</insert>
 	<select id="getCount" resultType="Integer">
 	SELECT COUNT(*) COUNT FROM 
