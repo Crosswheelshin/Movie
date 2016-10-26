@@ -79,7 +79,7 @@
 			<c:forEach var="n" items="${list}">
 				<tr>
 					<td>${n.code}</td>
-					<td><a href="notice-detail?code=${n.code}">${n.title}</a></td>
+					<td><a href="movie_review-detail?code=${n.code}">${n.title}</a></td>
 					<td>${n.writer}</td>
 					<td><fmt:formatDate pattern="yyyy-MM-dd" value="${n.regDate}" /></td>
 					<td>${n.movie_title}</td>
@@ -107,23 +107,23 @@
 
 
 		<div>
-			<a href="notice?p=${(page==1)?1:start-1}">이전</a>
+			<a href="movie_review?p=${(page==1)?1:start-1}">이전</a>
 		</div>
 		<ul>
 			<c:forEach var="i" begin="0" end="4">
 				<c:if test="${start+i <= end}">
 					<c:if test="${page==start+i}">
-						<li><a href="notice?p=${start+i}&t=${param.t}&q=${param.q}"
+						<li><a href="movie_review?p=${start+i}&t=${param.t}&q=${param.q}"
 							class="strong">${start+i}</a></li>
 					</c:if>
 					<c:if test="${page!=start+i}">
-						<li><a href="notice?p=${start+i}&t=${param.t}&q=${param.q}">${start+i}</a></li>
+						<li><a href="movie_review?p=${start+i}&t=${param.t}&q=${param.q}">${start+i}</a></li>
 					</c:if>
 				</c:if>
 			</c:forEach>
 		</ul>
 		<div>
-			<a href="notice?p=${start+5}&t=${param.t}&q=${param.q}">다음</a>
+			<a href="movie_review?p=${start+5}&t=${param.t}&q=${param.q}">다음</a>
 		</div>
 	</div>
 

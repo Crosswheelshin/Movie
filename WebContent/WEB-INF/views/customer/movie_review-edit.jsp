@@ -1,4 +1,4 @@
-<%@page import="com.movieb.web.dao.mybatis.MyBatisNoticeDao"%>
+
 <%@page import="com.movieb.web.entities.Notice"%>
 <%@page import="com.movieb.web.dao.NoticeDao"%>
 <%@page import="java.util.Date"%>
@@ -10,9 +10,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<%
-	
-%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -23,7 +20,7 @@
 
 <body>
 	<h1>
-		<a href="">영화리뷰등록</a>
+		<a href="">영화리뷰수정</a>
 	</h1>
 	<ul>
 		<li><a href="../index.jsp">home</a>
@@ -31,25 +28,41 @@
 		<li><a href="movie_review">영화리뷰</a>
 		<li>
 	</ul>
-	<form action="notice-reg" method="post">
+	<form action="movie_review-edit" method="post">
 		<fieldset>
 			<legend>
 				<table border=1>
 					<tbody>
 						<tr>
 							<td>제목</td>
-							<td><input type="text" name="title" value="${n.title}" /></td>
+							<td colspan="3"><input type="text" name="title" value="${n.title}" /></td>
 						</tr>
-
 						<tr>
-							<td colspan="2"><textarea name="content" rows="20" cols="60">${n.content}</textarea>
+							<td>작성일</td>
+							<td colspan="3">${n.regDate}</td>
+
+						</tr>
+						<tr>
+							<td>작성자</td>
+							<td>${n.writer}</td>
+							<td>조회수</td>
+							<td>${n.hit}</td>
+						</tr>
+						<tr>
+							<td>첨부파일</td>
+							<td colspan="3"></td>
+
+						</tr>
+						<tr>
+							<td colspan="4"><textarea name="content" rows="20" cols="60">${n.content}</textarea>
 							</td>
 						</tr>
 					</tbody>
 				</table>
 				<div>
-					<input type ="submit" value="등록"/>
-					<a href="notice">취소</a>
+					<input type="hidden" name="code" value="${n.code}">	
+					<input type ="submit" value="저장">
+					<a href="movie_review-detail?code=${n.code}">취소</a>
 				</div>
 			</legend>
 		</fieldset>

@@ -22,7 +22,7 @@
 		<a href="">영화리뷰상세</a>
 	</h1>
 	<ul>
-		<li><a href="../index.jsp">home</a>
+		<li><a href=" ">home</a>
 		<li>
 		<li><a href="/customer/movie_review">영화리뷰</a>
 		<li>
@@ -61,9 +61,9 @@
 	<div>
 		<input type="hidden" name="code" value="${n.code}">
 		<ul>
-			<li><a href="notice">목록</a></li>
-			<li><a href="notice-edit?code=${n.code}">수정</a></li>
-			<li><a href="notice-del?code=${n.code}">삭제</a></li>
+			<li><a href="movie_review">목록</a></li>
+			<li><a href="movie_review-edit?code=${n.code}">수정</a></li>
+			<li><a href="movie_review-del?code=${n.code}">삭제</a></li>
 		</ul>
 	</div>
 </body>
