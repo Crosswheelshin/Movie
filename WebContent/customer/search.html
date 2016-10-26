@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>오늘 뭐 보지?</title>
+<style type="text/css">
+	.strong
+	{
+		color: red;
+		text-decoration: none;
+		font-size: 1.2em;
+	}
+</style>
+</head>
+<body>
+
+<!---------------- header ------------------>
+<header id="header">
+	<h1 class="logo"><a href="/main">Movieb</a></h1>
+
+	<section>
+<!-- 영화검색  -->
+	<h1>영화검색 메뉴</h1>
+	<form>
+		<fieldset>
+			<legend>영화 검색</legend>
+			<input type="text" name="name" placeholder="뭐 볼까?"/>
+			<button type="submit">검색</button>
+		</fieldset>
+	</form>
+<!-- 영화검색  -->
+
+<!-- 사용자계정 -->
+	<h1>사용자계정 메뉴</h1>
+	<div>
+		<ul>
+			<li><a href="">회원가입</a></li>
+			<li><a href="">로그인</a></li>
+			<li><a href="">마이페이지</a></li>
+		</ul>
+	</div>
+<!-- 사용자계정 -->
+	</section>
+</header>
+<!---------------- //header ------------------>
+
+<!---------------- body-aside ------------------>
+<aside>
+	<form>
+	<div>
+		<ul>
+			<li class="first">
+				<h1>장르별 영화</h1>
+					<ul>
+						<li><input type="checkbox" name="" value=""/>SF</li>
+						<li><input type="checkbox" name="" value=""/>공포</li>
+						<li><input type="checkbox" name="" value=""/>드라마</li>
+						<li><input type="checkbox" name="" value=""/>로멘틱</li>
+						<li><input type="checkbox" name="" value=""/>코미디</li>
+						<li><input type="checkbox" name="" value=""/>가족</li>
+						<li><input type="checkbox" name="" value=""/>다큐멘터리</li>
+						<li><input type="checkbox" name="" value=""/>맬로</li>
+						<li><input type="checkbox" name="" value=""/>범죄</li>
+						<li><input type="checkbox" name="" value=""/>애니메이션</li>
+						<li><input type="checkbox" name="" value=""/>액션</li>
+						<li><input type="checkbox" name="" value=""/>전쟁</li>
+						<li><input type="checkbox" name="" value=""/>판타지</li>
+					</ul>
+			</li>
+			
+			<li class="second">
+				<h1>개봉 연도별 영화</h1>
+					<ul>
+						<li><input type="checkbox" name="" value=""/>2016</li>
+						<li><input type="checkbox" name="" value=""/>2015</li>
+						<li><input type="checkbox" name="" value=""/>2014</li>
+						<li><input type="checkbox" name="" value=""/>2013</li>
+						<li><input type="checkbox" name="" value=""/>2012</li>
+						<li><input type="checkbox" name="" value=""/>2011</li>
+						<li><input type="checkbox" name="" value=""/>2010</li>
+						<li><input type="checkbox" name="" value=""/>2009</li>
+						<li><input type="checkbox" name="" value=""/>2008</li>
+						<li><input type="checkbox" name="" value=""/>2007</li>
+						<li><input type="checkbox" name="" value=""/>2006</li>
+						<li><input type="checkbox" name="" value=""/>2005</li>
+						<li><input type="checkbox" name="" value=""/>2004</li>
+						<li><input type="checkbox" name="" value=""/>2003</li>
+					</ul>
+			</li>
+
+			<li class="third">
+				<h1>국가별 영화</h1>
+					<ul>
+						<li><input type="checkbox" name="" value=""/>한국</li>
+						<li><input type="checkbox" name="" value=""/>미국</li>
+						<li><input type="checkbox" name="" value=""/>영국</li>
+						<li><input type="checkbox" name="" value=""/>중국</li>
+						<li><input type="checkbox" name="" value=""/>일본</li>
+						<li><input type="checkbox" name="" value=""/>대만</li>
+						<li><input type="checkbox" name="" value=""/>카자흐스탄</li>
+					</ul>
+			</li>
+	
+			<li class="last">
+				<h1>연령등급별 영화</h1>
+					<ul>
+						<li><input type="checkbox" name="" value=""/>청소년 관람불가</li>
+						<li><input type="checkbox" name="" value=""/>15세 이상</li>
+						<li><input type="checkbox" name="" value=""/>12세 이상</li>
+						<li><input type="checkbox" name="" value=""/>7세 이상</li>
+						<li><input type="checkbox" name="" value=""/>전체 이용가</li>			
+					</ul>
+			</li>
+		</ul>
+		
+		<div>
+			<h1>상영시간별 영화</h1>
+			<dl>
+				<dt></dt>
+				<dd><input type="time" name="" value=""/><</dd>
+			</dl>
+			<div>
+				<button type="submit" class="btn_search">검색하기</button>
+			</div>
+		</div>	
+	</div>
+	</form>
+</aside>
+<!---------------- //body-aside ------------------>	
+
+<!---------------- body-main ------------------>	
+<section>
+	<h1>검색결과 항목선택</h1>
+	<table>
+		<tbody>
+			<tr>
+				<th>결과</th>
+				<td>--선택 컬럼을 넣자--<a href="">선택취소</a></td>
+			</tr>
+		</tbody>
+	</table>
+	
+<!-- 검색 결과 바 -->
+	<h1>검색결과 정렬</h1>
+		<div>
+			<p>당신이 원하는 영화가 <strong class="strong">1,153</strong>개 있습니다.</p>
+				<div>
+					<select>
+						<option value="">상영시간순 정렬</option>
+						<option value="">가나다순 정렬</option>
+						<option value="">정확도순 정렬</option>
+					</select>
+				</div>
+		</div>
+	
+	<h1>검색결과 </h1>
+		<ul>
+			<li><a href=""><img src="" alt=""/></a>
+			<li><a href=""><img src="" alt=""/></a>
+		</ul>
+<!-- 검색 결과 바 -->
+</section>									
+<!---------------- //body-main ------------------>	
+
+<!---------------- footer ------------------>	
+	<footer id="footer">
+	</footer>
+<!---------------- footer ------------------>	
+</body>
+</html>
