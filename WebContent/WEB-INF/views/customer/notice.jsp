@@ -34,12 +34,12 @@
 
 <body>
 	<h1>
-		<a href="">게시판??????</a>
+		<a href="">영화리뷰</a>
 	</h1>
 	<ul>
 		<li><a href="../index.jsp">home</a>
 		<li>
-		<li><a href="/customer/notice">공지사항</a>
+		<li><a href="/customer/movie_review">영화리뷰</a>
 		<li>
 			<form action="notice" method="get">
 				<fieldset>
@@ -70,6 +70,7 @@
 				<td>제목</td>
 				<td>작성자</td>
 				<td>작성일</td>
+				<td>영화제목</td>
 				<td>조회수</td>
 			</tr>
 		</thead>
@@ -80,8 +81,8 @@
 					<td>${n.code}</td>
 					<td><a href="notice-detail?code=${n.code}">${n.title}</a></td>
 					<td>${n.writer}</td>
-					<td><fmt:formatDate pattern="yyyy-MM-dd" value="${n.regDate}" />
-					</td>
+					<td><fmt:formatDate pattern="yyyy-MM-dd" value="${n.regDate}" /></td>
+					<td>${n.movie_title}</td>
 					<td>${n.hit}</td>
 				</tr>
 			</c:forEach>

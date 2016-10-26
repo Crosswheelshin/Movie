@@ -12,7 +12,7 @@ import com.movieb.web.dao.NoticeDao;
 import com.movieb.web.dao.mybatis.MyBatisNoticeDao;
 import com.movieb.web.entities.Notice;
 
-@WebServlet("/customer/notice-del")
+@WebServlet("/customer/movie_review-del")
 public class NoticeDelController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

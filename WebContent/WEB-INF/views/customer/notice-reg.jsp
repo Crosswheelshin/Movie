@@ -23,12 +23,12 @@
 
 <body>
 	<h1>
-		<a href="">게시판등록</a>
+		<a href="">영화리뷰등록</a>
 	</h1>
 	<ul>
 		<li><a href="../index.jsp">home</a>
 		<li>
-		<li><a href="notice">공지사항</a>
+		<li><a href="movie_review">영화리뷰</a>
 		<li>
 	</ul>
 	<form action="notice-reg" method="post">

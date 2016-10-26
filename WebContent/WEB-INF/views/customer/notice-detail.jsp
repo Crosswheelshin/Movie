@@ -19,12 +19,12 @@
 
 <body>
 	<h1>
-		<a href="">게시판상세</a>
+		<a href="">영화리뷰상세</a>
 	</h1>
 	<ul>
 		<li><a href="../index.jsp">home</a>
 		<li>
-		<li><a href="notice">공지사항</a>
+		<li><a href="/customer/movie_review">영화리뷰</a>
 		<li>
 	</ul>
 	<table border=1>
@@ -36,7 +36,8 @@
 			</tr>
 			<tr>
 				<td>작성일</td>
-				<td colspan="3">${n.regDate}</td>
+				<td colspan="3"><fmt:formatDate pattern="yyyy-MM-dd" value="${n.regDate}" /></td>
+			
 
 			</tr>
 			<tr>

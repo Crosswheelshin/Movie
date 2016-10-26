@@ -19,13 +19,13 @@
 </head>
 
 <body>
-	<h1>sss
-		<a href="">게시판수정</a>
+	<h1>
+		<a href="">영화리뷰수정</a>
 	</h1>
 	<ul>
 		<li><a href="../index.jsp">home</a>
 		<li>
-		<li><a href="notice">공지사항</a>
+		<li><a href="movie_review">영화리뷰</a>
 		<li>
 	</ul>
 	<form action="notice-edit" method="post">

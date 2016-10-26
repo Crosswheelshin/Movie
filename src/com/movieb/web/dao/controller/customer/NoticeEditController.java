@@ -13,7 +13,7 @@ import com.movieb.web.dao.NoticeDao;
 import com.movieb.web.dao.mybatis.MyBatisNoticeDao;
 import com.movieb.web.entities.Notice;
 
-@WebServlet("/customer/notice-edit")
+@WebServlet("/customer/movie_review-edit")
 public class NoticeEditController extends HttpServlet {
 	
 	@Override
@@ -31,7 +31,7 @@ public class NoticeEditController extends HttpServlet {
 		
 		noticeDao.update(n);
 		
-		response.sendRedirect("notice-detail?code="+code);
+		response.sendRedirect("movie_review-detail?code="+code);
 		
 	}
 	
@@ -46,7 +46,7 @@ public class NoticeEditController extends HttpServlet {
 		notice = noticeDao.get(_code);
 		request.setAttribute("n", notice);
 		
-		request.getRequestDispatcher("/WEB-INF/views/customer/notice-edit.jsp")
+		request.getRequestDispatcher("/WEB-INF/views/customer/movie_review-edit.jsp")
 		   .forward(request, response);
 	}
 }
