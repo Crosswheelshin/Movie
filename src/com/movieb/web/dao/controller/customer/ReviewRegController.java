@@ -12,12 +12,12 @@ import com.movieb.web.dao.NoticeDao;
 import com.movieb.web.dao.mybatis.MyBatisNoticeDao;
 import com.movieb.web.entities.Notice;
 
-@WebServlet("/customer/notice-reg")
-public class NoticeRegController extends HttpServlet {
+@WebServlet("/customer/review-reg")
+public class ReviewRegController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.getRequestDispatcher("/WEB-INF/views/customer/notice-reg.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/views/customer/review-reg.jsp").forward(request, response);
 	}
 	
 	@Override
@@ -38,7 +38,7 @@ public class NoticeRegController extends HttpServlet {
 		
 		noticeDao.insert(n);
 		
-		response.sendRedirect("notice");
+		response.sendRedirect("review");
 	}
 }
 

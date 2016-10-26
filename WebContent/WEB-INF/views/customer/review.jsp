@@ -10,6 +10,7 @@
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -34,14 +35,14 @@
 
 <body>
 	<h1>
-		<a href="">영화리뷰</a>
+		<a href="">리뷰</a>
 	</h1>
 	<ul>
 		<li><a href="../index.jsp">home</a>
 		<li>
-		<li><a href="/customer/movie_review">영화리뷰</a>
+		<li><a href="/customer/review">리뷰</a>
 		<li>
-			<form action="notice" method="get">
+			<form action="review" method="get">
 				<fieldset>
 					<select name="t">
 						<option value="NONE">분류선택</option>
@@ -70,7 +71,6 @@
 				<td>제목</td>
 				<td>작성자</td>
 				<td>작성일</td>
-				<td>영화제목</td>
 				<td>조회수</td>
 			</tr>
 		</thead>
@@ -79,10 +79,10 @@
 			<c:forEach var="n" items="${list}">
 				<tr>
 					<td>${n.code}</td>
-					<td><a href="movie_review-detail?code=${n.code}">${n.title}</a></td>
+					<td><a href="review-detail?code=${n.code}">${n.title}</a></td>
 					<td>${n.writer}</td>
-					<td><fmt:formatDate pattern="yyyy-MM-dd" value="${n.regDate}" /></td>
-					<td>${n.movie_title}</td>
+					<td><<fmt:formatDate pattern="yyyy-MM-dd" value="${n.regDate}" />
+					</td>
 					<td>${n.hit}</td>
 				</tr>
 			</c:forEach>
@@ -100,30 +100,30 @@
 	</c:if>
 	<div>${page}/${end} pages</div>
 	<div>
-		<a href="notice-reg">글쓰기</a>
+		<a href="review-reg">글쓰기</a>
 	</div>
 	<div>
 
 
 
 		<div>
-			<a href="movie_review?p=${(page==1)?1:start-1}">이전</a>
+			<a href="review?p=${(page==1)?1:start-1}">이전</a>
 		</div>
 		<ul>
 			<c:forEach var="i" begin="0" end="4">
 				<c:if test="${start+i <= end}">
 					<c:if test="${page==start+i}">
-						<li><a href="movie_review?p=${start+i}&t=${param.t}&q=${param.q}"
+						<li><a href="review?p=${start+i}&t=${param.t}&q=${param.q}"
 							class="strong">${start+i}</a></li>
 					</c:if>
 					<c:if test="${page!=start+i}">
-						<li><a href="movie_review?p=${start+i}&t=${param.t}&q=${param.q}">${start+i}</a></li>
+						<li><a href="review?p=${start+i}&t=${param.t}&q=${param.q}">${start+i}</a></li>
 					</c:if>
 				</c:if>
 			</c:forEach>
 		</ul>
 		<div>
-			<a href="movie_review?p=${start+5}&t=${param.t}&q=${param.q}">다음</a>
+			<a href="review?p=${start+5}&t=${param.t}&q=${param.q}">다음</a>
 		</div>
 	</div>
 

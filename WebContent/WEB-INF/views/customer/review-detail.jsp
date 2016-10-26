@@ -10,6 +10,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+<%    
+
+/*    String _code = request.getParameter("code");
+
+	
+	NoticeDao noticeDao= new MybatisNoticeDao();
+	Notice notice = noticeDao.get(_code);  
+   
+   pageContext.setAttribute("n", notice);//--->${n.컬럼}  or   ${n["컬럼"]}
+ */
+   
+%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -19,12 +32,12 @@
 
 <body>
 	<h1>
-		<a href="">영화리뷰상세</a>
+		<a href="">리뷰상세</a>
 	</h1>
 	<ul>
-		<li><a href=" ">home</a>
+		<li><a href="../index.jsp">home</a>
 		<li>
-		<li><a href="/customer/movie_review">영화리뷰</a>
+		<li><a href="review">리뷰</a>
 		<li>
 	</ul>
 	<table border=1>
@@ -36,8 +49,7 @@
 			</tr>
 			<tr>
 				<td>작성일</td>
-				<td colspan="3"><fmt:formatDate pattern="yyyy-MM-dd" value="${n.regDate}" /></td>
-			
+				<td colspan="3">${n.regDate}</td>
 
 			</tr>
 			<tr>
@@ -61,9 +73,9 @@
 	<div>
 		<input type="hidden" name="code" value="${n.code}">
 		<ul>
-			<li><a href="movie_review">목록</a></li>
-			<li><a href="movie_review-edit?code=${n.code}">수정</a></li>
-			<li><a href="movie_review-del?code=${n.code}">삭제</a></li>
+			<li><a href="review">목록</a></li>
+			<li><a href="review-edit?code=${n.code}">수정</a></li>
+			<li><a href="review-del?code=${n.code}">삭제</a></li>
 		</ul>
 	</div>
 </body>
