@@ -8,6 +8,8 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import com.movieb.web.dao.MovieDao;
 import com.movieb.web.entities.Movie;
 
+
+
 public class MybatisMovieDao implements MovieDao 
 {
 	SqlSessionFactory ssf;

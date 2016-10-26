@@ -4,8 +4,6 @@ import java.util.List;
 
 import com.movieb.web.entities.Movie;
 
-
-
 public interface MovieDao 
 {
 	Movie get(String code);
