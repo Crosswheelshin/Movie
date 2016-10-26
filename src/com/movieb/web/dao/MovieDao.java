@@ -2,7 +2,7 @@ package com.movieb.web.dao;
 
 import java.util.List;
 
-import com.jeryun.web.entities.Movie;
+import com.movieb.web.entities.Movie;
 
 
 

@@ -5,8 +5,8 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import com.jeryun.web.dao.MovieDao;
-import com.jeryun.web.entities.Movie;
+import com.movieb.web.dao.MovieDao;
+import com.movieb.web.entities.Movie;
 
 public class MybatisMovieDao implements MovieDao 
 {
