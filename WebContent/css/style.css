@@ -1,0 +1,28 @@
+@CHARSET "UTF-8";
+
+#header{
+	width:0px;
+	min-height: 200px;
+}
+
+
+#header > ul{
+	 background-image: url(images/main_.png);
+}
+
+#header a{
+	float: left;
+	padding-left: 24px;
+}
+
+#body{
+	top:200px;
+	height:200px;
+	
+}
+
+
+
+.setting:hover{
+	opacity:0.4;
+}
