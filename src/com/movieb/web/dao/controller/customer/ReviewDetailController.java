@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.movieb.web.dao.NoticeDao;
-import com.movieb.web.dao.mybatis.MyBatisNoticeDao;
-import com.movieb.web.entities.Notice;
+import com.movieb.web.dao.ReviewDao;
+import com.movieb.web.dao.mybatis.MyBatisReviewDao;
+import com.movieb.web.entities.Review;
 
 
 @WebServlet("/customer/review-detail")
@@ -23,11 +23,11 @@ public class ReviewDetailController extends HttpServlet {
 	   String _code = request.getParameter("code");
 
 		
-		NoticeDao noticeDao;
-		Notice notice;
-		noticeDao= new MyBatisNoticeDao();
-		notice = noticeDao.get(_code);
-		request.setAttribute("n", notice);
+		ReviewDao reviewDao;
+		Review review;
+		reviewDao= new MyBatisReviewDao();
+		review = reviewDao.get(_code);
+		request.setAttribute("n", review);
 
 		// --->${n.컬럼} or ${n["컬럼"]}
 

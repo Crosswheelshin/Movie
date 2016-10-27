@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.movieb.web.dao.NoticeDao;
-import com.movieb.web.dao.mybatis.MyBatisNoticeDao;
-import com.movieb.web.entities.Notice;
+import com.movieb.web.dao.ReviewDao;
+import com.movieb.web.dao.mybatis.MyBatisReviewDao;
+import com.movieb.web.entities.Review;
 
 
 
@@ -24,15 +24,15 @@ public class ReviewEditController extends HttpServlet {
 		  String title= request.getParameter("title");
 		  String movie_title= request.getParameter("movie_title");
 		  
-		  NoticeDao noticeDao = new MyBatisNoticeDao();
-		  Notice n = new Notice();
+		  ReviewDao reviewDao = new MyBatisReviewDao();
+		  Review n = new Review();
 		  
 		n.setMovie_title(movie_title);
 		  n.setTitle(title);
 		  n.setCode(code);
 		  n.setContent(content);	 
 		  
-		  noticeDao.update(n);
+		  reviewDao.update(n);
 		  
 		  response.sendRedirect("review-detail?code="+code);
 	
@@ -41,11 +41,11 @@ public class ReviewEditController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String _code = request.getParameter("code");
 
-	      NoticeDao noticeDao = new MyBatisNoticeDao();
-	      Notice notice;
+	      ReviewDao reviewDao = new MyBatisReviewDao();
+	      Review review;
 	      
-	      notice = noticeDao.get(_code);
-	      request.setAttribute("n", notice);
+	      review = reviewDao.get(_code);
+	      request.setAttribute("n", review);
 	      
 	      request.getRequestDispatcher("/WEB-INF/views/customer/review-edit.jsp").forward(request, response);
 	}

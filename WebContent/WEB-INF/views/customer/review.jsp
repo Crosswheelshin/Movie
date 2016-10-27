@@ -1,6 +1,6 @@
-<%@page import="com.movieb.web.dao.mybatis.MyBatisNoticeDao"%>
-<%@page import="com.movieb.web.model.NoticeModel"%>
-<%@page import="com.movieb.web.entities.Notice"%>
+<%@page import="com.movieb.web.dao.mybatis.MyBatisReviewDao"%>
+<%@page import="com.movieb.web.model.ReviewModel"%>
+<%@page import="com.movieb.web.entities.Review"%>
 <%@page import="java.util.Scanner"%>
 <%@page import="java.util.Date"%>
 <%@page import="java.util.List"%>

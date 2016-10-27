@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.movieb.web.dao.NoticeDao;
-import com.movieb.web.dao.mybatis.MyBatisNoticeDao;
-import com.movieb.web.entities.Notice;
+import com.movieb.web.dao.ReviewDao;
+import com.movieb.web.dao.mybatis.MyBatisReviewDao;
+import com.movieb.web.entities.Review;
 
 @WebServlet("/customer/review-reg")
 public class ReviewRegController extends HttpServlet {
@@ -29,16 +29,16 @@ public class ReviewRegController extends HttpServlet {
 		String movie_title = request.getParameter("movie_title");
 
 		
-		NoticeDao noticeDao = new MyBatisNoticeDao();
+		ReviewDao reviewDao = new MyBatisReviewDao();
 		
-		Notice n = new Notice();		
+		Review n = new Review();		
 		n.setTitle(title);
 		n.setContent(content);
 		n.setMovie_title(movie_title);
 		// 현재 로그인 사용자 정보를 얻는 로직
 		n.setWriter("kttank3");
 		
-		noticeDao.insert(n);
+		reviewDao.insert(n);
 		
 		response.sendRedirect("review");
 	}

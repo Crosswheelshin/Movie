@@ -13,6 +13,6 @@
 		</environment>
 	</environments>
 	<mappers>
-		<mapper resource="com/movieb/web/dao/mybatis/NoticeMapper.xml" />
+		<mapper resource="com/movieb/web/dao/mybatis/ReviewMapper.xml" />
 	</mappers>
 </configuration>

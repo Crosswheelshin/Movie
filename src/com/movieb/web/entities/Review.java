@@ -2,7 +2,7 @@ package com.movieb.web.entities;
 
 import java.util.Date;
 
-public class Notice {
+public class Review {
 	private String code;
 	private String title;
 	private String writer;

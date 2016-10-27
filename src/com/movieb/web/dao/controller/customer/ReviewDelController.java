@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.movieb.web.dao.NoticeDao;
-import com.movieb.web.dao.mybatis.MyBatisNoticeDao;
-import com.movieb.web.entities.Notice;
+import com.movieb.web.dao.ReviewDao;
+import com.movieb.web.dao.mybatis.MyBatisReviewDao;
+import com.movieb.web.entities.Review;
 
 
 @WebServlet("/customer/review-del")
@@ -20,8 +20,8 @@ public class ReviewDelController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 
 	   String code = request.getParameter("code");
-	   NoticeDao noticeDao = new MyBatisNoticeDao();
-	   noticeDao.delete(code);
+	   ReviewDao reviewDao = new MyBatisReviewDao();
+	   reviewDao.delete(code);
 		
 	   
 	   //--->${n.컬럼}  or   ${n["컬럼"]}

@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.movieb.web.dao.NoticeDao;
-import com.movieb.web.dao.mybatis.MyBatisNoticeDao;
-import com.movieb.web.model.NoticeModel;
+import com.movieb.web.dao.ReviewDao;
+import com.movieb.web.dao.mybatis.MyBatisReviewDao;
+import com.movieb.web.model.ReviewModel;
 
 
 @WebServlet("/customer/review")
@@ -37,12 +37,12 @@ public class ReviewController extends HttpServlet {
 		if (q != null)
 			query = q;
 
-		NoticeDao noticedao;
-		List<NoticeModel> list;
+		ReviewDao reviewDao;
+		List<ReviewModel> list;
 
-		noticedao = new MyBatisNoticeDao();
-		list = noticedao.getList(page, field, query);
-		int count= noticedao.getCount(field, query);
+		reviewDao = new MyBatisReviewDao();
+		list = reviewDao.getList(page, field, query);
+		int count= reviewDao.getCount(field, query);
 		request.setAttribute("list", list);
 		request.setAttribute("count", count);
 

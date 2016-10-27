@@ -1,8 +1,8 @@
 package com.movieb.web.model;
 
-import com.movieb.web.entities.Notice;
+import com.movieb.web.entities.Review;
 
-public class NoticeModel extends Notice {
+public class ReviewModel extends Review {
 	
 	private int cmtCnt;
 

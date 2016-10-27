@@ -1,6 +1,6 @@
-<%@page import="com.movieb.web.dao.mybatis.MyBatisNoticeDao"%>
-<%@page import="com.movieb.web.entities.Notice"%>
-<%@page import="com.movieb.web.dao.NoticeDao"%>
+<%@page import="com.movieb.web.dao.mybatis.MyBatisReviewDao"%>
+<%@page import="com.movieb.web.entities.Review"%>
+<%@page import="com.movieb.web.dao.ReviewDao"%>
 <%@page import="java.util.Date"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
