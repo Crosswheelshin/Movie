@@ -46,9 +46,6 @@ public class ReviewController extends HttpServlet {
 		request.setAttribute("list", list);
 		request.setAttribute("count", count);
 
-		// 1. 그냥부르기
-		// response.sendRedirect("notice.jsp");
-		// 2. 자원을 공유하면서 부르기: 일을계속하거라
 		request.getRequestDispatcher("/WEB-INF/views/customer/review.jsp").forward(request, response);//
 
 	}

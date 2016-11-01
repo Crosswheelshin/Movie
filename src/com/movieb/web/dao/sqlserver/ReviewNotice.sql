@@ -22,3 +22,8 @@ VALUES(
 	
 
 UPDATE SET
+
+
+select top 1 * from REVIEW_NOTICE
+		where code> cast('1'as int)
+		order by regdate desc

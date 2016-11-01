@@ -5,6 +5,7 @@ import java.util.List;
 import com.movieb.web.entities.Review;
 import com.movieb.web.model.ReviewModel;
 
+
 public interface ReviewDao {
 	Review get(String code);
 	List<ReviewModel> getList(int page, String field, String query);
@@ -13,5 +14,8 @@ public interface ReviewDao {
 	int insert(Review notice);
 	int update(Review notice);
 	int delete(String code);
+	Review getPrev(String code);
+	Review getNext(String code);
 	int getCount(String field, String query);
+	int hitUp(String code);
 }

@@ -90,42 +90,49 @@
 			</c:forEach>
 		</tbody>
 	</table>
-	<c:set var="start" value="${page-(page-1)%5}" />
-	<c:set var="end" value="${fn:substringBefore((count%10==0?count/10:count/10+1),'.')}" />
 
-	<!-- 먼저 param.p의 값을 page라는 값에 담아 제어구조문으로 기본값을 정의후  밑에서 page라는 값을 쓴다 -->
 	<c:if test="${empty param.p}">
 		<c:set var="page" value="1" />
 	</c:if>
 	<c:if test="${!empty param.p}">
 		<c:set var="page" value="${param.p}" />
 	</c:if>
-	<div>${page}/${end} pages</div>
+	<!-- page는 1~5 6~10 11~15 간격으로 나와야됨 -->
+	<c:set var="start" value="${page-(page-1)%5}" />
+	<c:set var="end"
+		value="${fn:substringBefore((count%10 == 0 ? count/10 : count/10 + 1),'.')}" />
+
+	<!-- 현재 상태-->
+	<div>
+		<h3 class="hidden">현재 페이지</h3>
+		${page} / ${end} pages
+	</div>
+
 	<div>
 		<a href="review-reg">글쓰기</a>
 	</div>
 	<div>
-
-
-
 		<div>
-			<a href="review?p=${(page==1)?1:start-1}">이전</a>
+			<a href="review?p=${(start==1)?1:start-1}&q=${param.q}&t=${param.t}"></a>
+		</div>
+		<div>
+			<a href="review?p=${(page==1)?1:page-1}&q=${param.q}&t=${param.t}"></a>
 		</div>
 		<ul>
 			<c:forEach var="i" begin="0" end="4">
 				<c:if test="${start+i <= end}">
-					<c:if test="${page==start+i}">
-						<li><a href="review?p=${start+i}&t=${param.t}&q=${param.q}"
-							class="strong">${start+i}</a></li>
-					</c:if>
-					<c:if test="${page!=start+i}">
-						<li><a href="review?p=${start+i}&t=${param.t}&q=${param.q}">${start+i}</a></li>
-					</c:if>
+					<li><a href="review?p=${start+i}&q=${param.q}&t=${param.t}"
+						<c:if test="${page == start+i}">class="strong"</c:if>>${start+i}</a></li>
 				</c:if>
 			</c:forEach>
 		</ul>
 		<div>
-			<a href="review?p=${start+5}&t=${param.t}&q=${param.q}">다음</a>
+			<a
+				href="review?p=${(page==end)?end:page+1}&q=${param.q}&t=${param.t}">></a>
+		</div>
+		<div>
+			<a
+				href="review?p=${(start+5>end)?end:start+5}&q=${param.q}&t=${param.t}">>></a>
 		</div>
 	</div>
 

@@ -6,6 +6,9 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -50,7 +53,7 @@
 			<tr>
 				<td>작성일</td>
 				<td colspan="3">
-				${n.regDate}"
+				<fmt:formatDate pattern="yy.MM.dd hh:mm" value="${n.regDate}"/>
 				</td>
 
 			</tr>
@@ -73,10 +76,19 @@
 
 		</tbody>
 	</table>
+	<div>		
+		<c:if test="${empty prev}">이전글이 없습니다.</c:if>
+		<c:if test="${!empty prev}"><a href="review-detail?code=${prev.code}">이전글 : ${prev.title}</a></c:if>
+	</div>
 	<div>
-		<input type="hidden" name="code" value="${n.code}">
+		<c:if test="${empty next}">다음글이 없습니다.</c:if>
+		<c:if test="${!empty next}"><a href="review-detail?code=${next.code}">다음글 : ${next.title}</a></c:if>
+	</div>
+	
+	<div>
+	
 		<ul>
-			<li><a href="review">목록</a></li>
+			<li><a href="review=${param.p}">목록</a></li>
 			<li><a href="review-edit?code=${n.code}">수정</a></li>
 			<li><a href="review-del?code=${n.code}">삭제</a></li>
 		</ul>

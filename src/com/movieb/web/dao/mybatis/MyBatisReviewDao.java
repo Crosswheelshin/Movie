@@ -9,6 +9,7 @@ import com.movieb.web.dao.ReviewDao;
 import com.movieb.web.entities.Review;
 import com.movieb.web.model.ReviewModel;
 
+
 public class MyBatisReviewDao implements ReviewDao {
 	
 	SqlSessionFactory ssf;
@@ -21,16 +22,19 @@ public class MyBatisReviewDao implements ReviewDao {
 	public Review get(String code) {
 		SqlSession session = ssf.openSession();
 		ReviewDao reviewDao = session.getMapper(ReviewDao.class);		
-		
-		return reviewDao.get(code);
+		Review result = reviewDao.get(code);
+		session.close();
+		return result;
 	}
 
 	@Override
 	public List<ReviewModel> getList(int page, String field, String query) {
 		SqlSession session = ssf.openSession();
-		ReviewDao reviewDao = session.getMapper(ReviewDao.class);		
+		ReviewDao reviewDao = session.getMapper(ReviewDao.class);
+		List<ReviewModel> result = reviewDao.getList(page, field, query);
+		session.close();
 		
-		return reviewDao.getList(page, field, query);
+		return result;
 	}
 
 	@Override
@@ -94,6 +98,36 @@ public class MyBatisReviewDao implements ReviewDao {
 		session.close();
 		
 		return count;				
+	}
+
+	@Override
+	public int hitUp(String code) {
+		SqlSession session = ssf.openSession();
+		ReviewDao reviewDao = session.getMapper(ReviewDao.class);
+		
+		int result = reviewDao.hitUp(code);
+		session.commit();
+		session.close();
+		
+		return result;
+	}
+
+	@Override
+	public Review getPrev(String code) {
+		SqlSession session = ssf.openSession();
+		ReviewDao reviewDao = session.getMapper(ReviewDao.class);		
+		Review result = reviewDao.getPrev(code);
+		session.close();
+		return result;
+	}
+
+	@Override
+	public Review getNext(String code) {
+		SqlSession session = ssf.openSession();
+		ReviewDao reviewDao = session.getMapper(ReviewDao.class);		
+		Review result = reviewDao.getNext(code);
+		session.close();
+		return result;
 	}
 	
 }
